@@ -120,10 +120,10 @@ while cap.isOpened():
             perspectiva = cv2.warpPerspective(imagen, h, (copy.shape[1], copy.shape[0]))
             cv2.fillConvexPoly(copy, puntos_aruco.astype(int), 0, 16)
             copy = copy + perspectiva
-            cv2.imshow("hola", copy)
+            cv2.imshow("Imagen", copy)
 
     else:
-        cv2.imshow("hola", frame)
+        cv2.imshow("Imagen", frame)
 
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
