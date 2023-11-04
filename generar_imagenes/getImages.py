@@ -8,7 +8,8 @@ num = 0
 
 
 while cap.isOpened():
-    succes, img = cap.read()
+    succes, img = cap.read()  # Lectura de imagen de la cámara
+    # Se genera una espera para prepararse para la foto
     for i in range(2):
         sleep(2)
         if i == 0:
@@ -24,6 +25,7 @@ while cap.isOpened():
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
+    # Iteraciones o cantidad de fotos a tomar
     if num >= 20:
         break
 

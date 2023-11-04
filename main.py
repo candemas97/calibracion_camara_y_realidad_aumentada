@@ -36,7 +36,7 @@ while cap.isOpened():
     # Deteccion de marcadores de la imagen
     esquinas, ids, candidatos_malos = cv2.aruco.detectMarkers(
         gray, diccionario, parameters=parametros
-    )
+    )  # esquinas corresponde a las del marcador y id corresponde al id del aruco
 
     if np.all(ids != None):
         # Iterar en marcadores
@@ -51,6 +51,8 @@ while cap.isOpened():
 
             # dibujar cuadrado en los alrededores
             cv2.aruco.drawDetectedMarkers(frame, esquinas)
+
+            # cv2.imshow("Imagen", frame)  # solo mostrar marcadores en verde
 
             # # Dibujar marcadores
             # cv2.aruco.drawAxis(frame, matrix, dist, rvec, tvec, 0.01)  # Draw Axis
